@@ -1,112 +1,104 @@
-.LieRectangles{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0rem;
+.LieRectangles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -8vh;
 }
-.spot_page_upper{
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    padding-top: 20px;
-
+.spot_page_upper {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding-top: 2.35vh;
 }
-.Lie_Information{
-    width: 18.625rem;
-height: 4.5rem;
-flex-shrink: 0;
-border-radius: var(--x-Large, 62.4375rem);
-background: var(--Dark-Dark--70, #384353);
-display: flex;
-justify-content: center;
-align-items: center;
+.Lie_Information {
+  width: 88vw;
+  height: 8vh;
+  flex-shrink: 0;
+  border-radius: var(--x-Large, 62.4375rem);
+  background: var(--Dark-Dark--70, #384353);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -12.5vh;
 }
-.User_picture img{
-width: 63px;
-height: 63px;
-
+.User_picture img {
+  width: 18vw;
+  height: 7.85vh;
 }
-.SpotPage_Submit{
-    display: flex;
-width: 13.625rem;
-padding: 0.9375rem 2rem;
-justify-content: center;
-align-items: center;
-gap: 0.625rem;
-border-radius: 0.75rem;
-background: var(--Primary-Primary-100, #C6FF00);
-margin-top: 20px;
-margin-bottom: 20px;
+.SpotPage_Submit {
+  display: flex;
+  width:  60vw;
+  padding: 0.9375rem 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.75rem;
+  background: var(--Primary-Primary-100, #c6ff00);
+  /* margin-top: 20px;
+  margin-bottom: 20px; */
+  position: fixed;
+  bottom: 7vh;
 }
-.User_picture{
-    display: flex;
-width: 3.75rem;
-height: 3.75rem;
-justify-content: center;
-align-items: center;
-flex-shrink: 0;
-
+.User_picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
-.User_text{
-    color: var(--Neutral-Light, #FFF);
-font-feature-settings: 'clig' off, 'liga' off;
-font-family: Gilroy;
-font-size: 0.75rem;
-font-style: normal;
-font-weight: 400;
-line-height: 120%; 
-
+.User_text {
+  color: var(--Neutral-Light, #fff);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Gilroy;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
 }
-.spot_upper_Skip{
-    display: inline-flex;
-padding: 0.625rem;
-justify-content: center;
-align-items: center;
-gap: 0.625rem;
-color: var(--Light-Light--70, #BCC9DA);
-text-align: center;
-font-family: Gilroy;
-font-size: 0.875rem;
-font-style: normal;
-font-weight: 700;
-line-height: 100%; /* 0.875rem */
-background: transparent;
-border:none;
-
+.spot_upper_Skip {
+  display: inline-flex;
+  padding: 0.625rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--Light-Light--70, #bcc9da);
+  text-align: center;
+  font-family: Gilroy;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 0.875rem */
+  background: transparent;
+  border: none;
 }
-.SpotPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.SpotPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.LieRectangle2{
-    position : relative;
-    top: -52px;
-    left: 2%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:1rem;
-    width: 98%;
-    /* background-color: white; */
+.LieRectangle2 {
+  position: relative;
+  top: -7vh;
+  left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 98%;
 }
-/* @media (min-width:403px) {
-    .LieRectangle1{
-       left: 35%;
-    }
-} */
-.spot_heading{
-    color: var(--Accent-Accent--03-Accent-03, #FBFF08);
-text-align: center;
-font-feature-settings: 'clig' off, 'liga' off;
--webkit-text-stroke-width: 1;
--webkit-text-stroke-color: var(--Neutral-Dark-100, #161716);
-font-family: "Saira SemiCondensed";
-font-size: 2rem;
-font-style: normal;
-font-weight: 800;
-line-height: 120%; 
-padding:0px 63px;
+.spot_heading {
+  color: var(--Accent-Accent--03-Accent-03, #fbff08);
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-color: var(--Neutral-Dark-100, #161716);
+  font-family: "Saira SemiCondensed";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  padding: 0px 19vw;
 }

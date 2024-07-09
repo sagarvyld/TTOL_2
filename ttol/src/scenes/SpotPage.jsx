@@ -16,6 +16,7 @@ const SpotPage = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [resultText, setResultText] = useState("Can you spot the lie? 😜");
+  const [resultTextSm, setResultTextSm] = useState("");
 
   const handleSelect = (index) => {
     setSelectedIndex(index);
@@ -27,8 +28,10 @@ const SpotPage = () => {
     setSubmitted(true);
     if (statements[selectedIndex].isLie) {
       setResultText("Woohoo 😎");
+      setResultTextSm("You caught their lie");
     } else {
       setResultText("Oh no! 😭");
+      setResultTextSm("You choose the wrong lie");
     }
   };
 
@@ -60,6 +63,7 @@ const SpotPage = () => {
         <button className='spot_upper_Skip'>Skip</button>
       </div>
       <p className='spot_heading'>{resultText}</p>
+      {submitted && <p className='spot_heading-sm'>{resultTextSm}</p>}
       <div className="LieRectangles">
         <div onClick={() => handleSelect(0)}>
           {renderRectangle(0)}
@@ -73,20 +77,19 @@ const SpotPage = () => {
           </div>
         </div>
       </div>
-      <div className="Lie_Information">
+      {(selectedIndex===null) && <div className="Lie_Information">
         <div className="User_picture">
           <img src={profile} alt="User" />
         </div>
         <div className="User_text">
           Wow !! that’s a tough one and I have managed something let’s see if you get it
         </div>
-      </div>
+      </div>}
       <button
         className='SpotPage_Submit'
         onClick={handleSubmit}
-        style={{ opacity: selectedIndex === null ? 0.3 : 1 }}
       >
-        Submit
+        <span style={{ opacity: selectedIndex === null ? 0.3 : 1 }}>Submit</span>
       </button>
     </div>
   );

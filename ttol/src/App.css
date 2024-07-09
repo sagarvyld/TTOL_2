@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,27 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.App{
+  background-color:var(--Dark-Dark--100, #0E1928);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.star-bg1{
+  width: 1.6875rem;
+height: 1.6875rem;
+flex-shrink: 0;
+position: fixed;
+top:24.4vh;
+left: 12.2vw;
+}
+.star-bg2{
+  width: 1.6875rem;
+height: 1.6875rem;
+flex-shrink: 0;
+position: fixed;
+top:42.4vh;
+right: 12.8vw;
 }

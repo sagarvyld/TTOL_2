@@ -9,8 +9,8 @@ import Confetti from 'react-confetti';
 
 const statements = [
   { text: "I have a Black belt in Karate", isLie: false },
-  { text: "I have ghosted a celebrity in DMs", isLie: true },
-  { text: "I have accidentally texted a meme to my boss", isLie: false }
+  { text: "I have ghosted a celebrity in DMs", isLie: false },
+  { text: "I have accidentally texted a meme to my boss", isLie: true }
 ];
 
 const SpotPage = () => {

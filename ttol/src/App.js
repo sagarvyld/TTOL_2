@@ -1,9 +1,4 @@
-import logo from "./logo.svg";
 import "./App.css";
-import LieRectangel from "./components/LieRectangel";
-import WhiteRectangle from "./components/WhiteRectangle";
-import PinkReactangle from "./components/PinkReactangle";
-import RedRectangel from "./components/RedRectangle";
 import SpotPage from "./scenes/SpotPage";
 
 function App() {

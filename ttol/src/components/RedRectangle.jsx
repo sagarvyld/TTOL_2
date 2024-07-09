@@ -1,9 +1,11 @@
 import React from "react";
 import './t.css'
-const RedRectangel = ({ text = "pokemon is the greatest show i ever watch. My favourite pokemon in Infernape", isTrue = false }) => {
-  return (
+import useDynamicMarginBottom from './useDynamicMarginBottom';
+const RedRectangel = ({ text = "pokemon is the greatest show i ever watch. My favourite pokemon in Infernape i am a pokemin fan of year", isTrue = false }) => {
+    const { ref, marginBottom } = useDynamicMarginBottom(text, "w_p");
+    return (
     <div className="Lie_rectangel">
-         <p className="w_p">{text}</p>
+         <p className="w_p" ref={ref} style={{ color: 'white', marginBottom: `${marginBottom}px` }}>{text}</p>
       <svg
         width="147"
         height="172"

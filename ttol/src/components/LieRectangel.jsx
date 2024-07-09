@@ -1,9 +1,11 @@
 import React from "react";
 import './t.css'
+import useDynamicMarginBottom from './useDynamicMarginBottom';
 const LieRectangel = ({ text = "I've accidentally texted a meme to my boss" ,isTrue=false }) => {
+    const { ref, marginBottom } = useDynamicMarginBottom(text, "w_p");
   return (
     <div className="Lie_rectangel">
-              <p className="w_p" style={{color:'white'}}>{text}</p>
+           <p className="w_p" ref={ref} style={{ color: 'white', marginBottom: `${marginBottom}px` }}>{text}</p>
       <svg
         width="147"
         height="172"

@@ -1,8 +1,9 @@
 import React from "react";
-
-const WhiteRectangle = ({text="pokemon"}) => {
+import './t.css'
+const WhiteRectangle = ({text="pokemon is the greatest show i ever watch. My favourite pokemon in Infernape"}) => {
   return (
     <div>
+      <p className="w_p">{text}</p>
       <svg
         width="147"
         height="172"
@@ -37,16 +38,7 @@ const WhiteRectangle = ({text="pokemon"}) => {
             />
           </g>
         </g>
-        <text
-          x="50%"
-          y="50%"
-          dominantBaseline="middle"
-          textAnchor="middle"
-          fill="black"
-          fontSize="20"
-        >
-          {text}
-        </text>
+       
         <rect
           x="0.5"
           y="0.5"

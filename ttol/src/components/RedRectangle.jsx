@@ -1,8 +1,9 @@
 import React from "react";
-
-const RedRectangel = ({ text = "pokemon", isTrue = false }) => {
+import './t.css'
+const RedRectangel = ({ text = "pokemon is the greatest show i ever watch. My favourite pokemon in Infernape", isTrue = false }) => {
   return (
     <div className="Lie_rectangel">
+         <p className="w_p">{text}</p>
       <svg
         width="147"
         height="172"
@@ -46,17 +47,7 @@ const RedRectangel = ({ text = "pokemon", isTrue = false }) => {
             fill="white"
           />
         </g>
-        
-        <text
-          x="50%"
-          y="50%"
-          dominantBaseline="middle"
-          textAnchor="middle"
-          fill="white"
-          fontSize="20"
-        >
-          {text}
-        </text>
+      
         <rect
           x="0.5"
           y="0.5"

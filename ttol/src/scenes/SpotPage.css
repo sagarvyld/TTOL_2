@@ -1,0 +1,42 @@
+.LieRectangles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+}
+.SpotPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.LieRectangle2{
+    position : relative;
+    top: -52px;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    width: 98%;
+    /* background-color: white; */
+}
+/* @media (min-width:403px) {
+    .LieRectangle1{
+       left: 35%;
+    }
+} */
+.spot_heading{
+    color: var(--Accent-Accent--03-Accent-03, #FBFF08);
+text-align: center;
+font-feature-settings: 'clig' off, 'liga' off;
+-webkit-text-stroke-width: 1;
+-webkit-text-stroke-color: var(--Neutral-Dark-100, #161716);
+font-family: "Saira SemiCondensed";
+font-size: 2rem;
+font-style: normal;
+font-weight: 800;
+line-height: 120%; 
+padding:0px 63px;
+}

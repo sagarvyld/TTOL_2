@@ -41,6 +41,8 @@
   background-color:var(--Dark-Dark--100, #0E1928);
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
 }
 .star-bg1{

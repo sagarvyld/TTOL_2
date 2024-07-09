@@ -1,7 +1,7 @@
 import React from "react";
 import './t.css'
 import useDynamicMarginBottom from './useDynamicMarginBottom';
-const RedRectangel = ({ text = "pokemon is the greatest show i ever watch. My favourite pokemon in Infernape i am a pokemin fan of year", isTrue = false }) => {
+const RedRectangel = ({ text = "pokemon is the greatest show i ever watch. My favourite pokemon in Infernape", isTrue = false }) => {
     const { ref, marginBottom } = useDynamicMarginBottom(text, "w_p");
     return (
     <div className="Lie_rectangel">

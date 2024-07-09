@@ -110,9 +110,9 @@ const SpotPage = () => {
           </div>
         </div>
       )}
-      <button className='SpotPage_Submit' onClick={handleSubmit}>
+      { !submitted && <button className='SpotPage_Submit' onClick={handleSubmit}>
         <span style={{ opacity: selectedIndex === null ? 0.3 : 1 }}>Submit</span>
-      </button>
+      </button>}
     </div>
   );
 };

@@ -67,12 +67,13 @@ const SpotPage = () => {
         <div className="card" onClick={() => handleSelect(index)}>
           {submitted ? (
             statement.isLie ? (
-              <PinkRectangle text={statement.text} isTrue={true} />
+              <PinkRectangle text={statement.text} isTrue={false} />
             ) : (
-              <RedRectangle text={statement.text} />
+              <LieRectangel text={statement.text} />
             )
-          ) : (
-            <WhiteRectangle text={statement.text} />
+          ) : (selectedIndex!==index?(
+            <LieRectangel text={statement.text} />
+          ):(<WhiteRectangle text={statement.text} />)
           )}
         </div>
 
@@ -80,9 +81,9 @@ const SpotPage = () => {
         <div className="card" onClick={() => handleSelect(index)}>
           {submitted ? (
             statement.isLie ? (
-              <PinkRectangle text={statement.text} isTrue={false} />
+              <PinkRectangle text={statement.text} isTrue={true} />
             ) : (
-              <LieRectangel text={statement.text} /> // Corrected component name
+              <RedRectangle text={statement.text} /> // Corrected component name
             )
           ) : (
             <div>
@@ -122,7 +123,7 @@ const SpotPage = () => {
           </div>
         </div>
       </div>
-      {selectedIndex === null && (
+      {!submitted  && (
         <div className="Lie_Information">
           <div className="User_picture">
             <img src={profile} alt="User" />

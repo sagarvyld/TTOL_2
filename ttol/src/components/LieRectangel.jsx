@@ -4,7 +4,7 @@ import useDynamicMarginBottom from './useDynamicMarginBottom';
 const LieRectangel = ({ text = "I've accidentally texted a meme to my boss" ,isTrue=false }) => {
     const { ref, marginBottom } = useDynamicMarginBottom(text, "w_p");
   return (
-    <div>
+    <div className='outer-div-rect'>
            <p className="w_p" ref={ref} style={{ color: 'white', marginBottom: `${marginBottom}px` }}>{text}</p>
       <svg
         width="147"

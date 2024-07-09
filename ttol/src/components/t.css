@@ -1,15 +1,18 @@
-.w_p{
-    width: 132px;
-    position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    top: 144px;
-   text-align: center;
-margin-left: 8px;
-   font-size: 15px;
-   font-feature-settings: 'clig' off, 'liga' off;
-font-family: Gilroy;
-font-weight: 800;
-
-}
+.outer-div-rect{
+   position: relative;
+   display: inline-block;
+   }
+   
+   .outer-div-rect .w_p{
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+       width: 100%;
+       text-align: center;
+      text-align: center;
+      font-size: 15px;
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-family: Gilroy;
+      font-weight: 800;
+   }

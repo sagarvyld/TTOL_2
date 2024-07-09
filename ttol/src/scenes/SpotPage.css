@@ -37,8 +37,6 @@
   gap: 0.625rem;
   border-radius: 0.75rem;
   background: var(--Primary-Primary-100, #c6ff00);
-  /* margin-top: 20px;
-  margin-bottom: 20px; */
   position: fixed;
   bottom: 7vh;
 }
@@ -82,7 +80,6 @@
 .LieRectangle2 {
   position: relative;
   top: -7vh;
-  left: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,4 +98,10 @@
   font-weight: 800;
   line-height: 120%;
   padding: 0px 19vw;
+}
+
+@media (max-height:751px){
+  .SpotPage_Submit{
+    bottom: 1vh;
+  }
 }

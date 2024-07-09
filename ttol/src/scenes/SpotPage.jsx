@@ -44,7 +44,7 @@ const SpotPage = () => {
     setShowConfetti(true);
     setTimeout(() => {
       setShowConfetti(false);
-    }, 3000);
+    }, 4000);
   };
 
   useEffect(() => {

@@ -88,11 +88,11 @@ const SpotPage = () => {
         </p>
       )}
       <div className="LieRectangles">
-        <div onClick={() => handleSelect(0)}>
+        <div  onClick={() => handleSelect(0)}>
           {renderRectangle(0)}
         </div>
         <div className="LieRectangle2">
-          <div onClick={() => handleSelect(1)}>
+          <div  onClick={() => handleSelect(1)}>
             {renderRectangle(1)}
           </div>
           <div className='i' onClick={() => handleSelect(2)}>
@@ -100,7 +100,7 @@ const SpotPage = () => {
           </div>
         </div>
       </div>
-      {selectedIndex === null && (
+      {!submitted  && (
         <div className="Lie_Information">
           <div className="User_picture">
             <img src={profile} alt="User" />

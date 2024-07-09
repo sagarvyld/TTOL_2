@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -8vh;
+  /* top: -8vh; */
 }
 .spot_page_upper {
   display: flex;
@@ -22,7 +22,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -15.7vh;
+  top: 3vh;
 }
 .User_picture img {
   width: 18vw;
@@ -79,12 +79,12 @@
 }
 .LieRectangle2 {
   position: relative;
-  top: -9vh;
+  top: 1.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  width: 98%;
+  width: 100%;
 }
 .spot_heading {
   color: var(--Accent-Accent--03-Accent-03, #fbff08);
@@ -122,6 +122,3 @@
   }
 }
 
-.i{
-  margin-bottom: 1.4vh;
-}

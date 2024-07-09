@@ -111,6 +111,10 @@
   position: relative;
   top: -6vh;
 }
+.spot_heading-sm-wrong {
+  color: #FF4567;
+}
+
 
 @media (max-height: 751px) {
   .SpotPage_Submit {

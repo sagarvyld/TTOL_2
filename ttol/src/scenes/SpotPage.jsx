@@ -44,7 +44,7 @@ const SpotPage = () => {
     setShowConfetti(true);
     setTimeout(() => {
       setShowConfetti(false);
-    }, 3000);
+    }, 4000);
   };
 
   useEffect(() => {
@@ -83,7 +83,9 @@ const SpotPage = () => {
         <button className='spot_upper_Skip'>Skip</button>
       </div>
       <p className='spot_heading'>{resultText}</p>
-      {submitted && <p className='spot_heading-sm'>{resultTextSm}</p>}
+      <p className={`spot_heading-sm ${!win ? 'spot_heading-sm-wrong' : ''}`}>
+          {resultTextSm}
+        </p>
       <div className="LieRectangles">
         <div onClick={() => handleSelect(0)}>
           {renderRectangle(0)}

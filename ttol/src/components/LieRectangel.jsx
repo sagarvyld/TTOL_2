@@ -1,9 +1,9 @@
 import React from "react";
 import './t.css'
-const LieRectangel = ({ text = "pokemon is the greatest show i ever watch. My favourite pokemon in Infernape" ,isTrue=false }) => {
+const LieRectangel = ({ text = "I've accidentally texted a meme to my boss" ,isTrue=false }) => {
   return (
     <div className="Lie_rectangel">
-              <p className="w_p">{text}</p>
+              <p className="w_p" style={{color:'white'}}>{text}</p>
       <svg
         width="147"
         height="172"

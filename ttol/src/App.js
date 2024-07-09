@@ -9,6 +9,7 @@ function App() {
   return (
    <div>
 <LieRectangel/>
+<LieRectangel/>
 <WhiteRectangle/>
 <PinkReactangle/>
 <RedRectangel/>

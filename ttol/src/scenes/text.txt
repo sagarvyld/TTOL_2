@@ -1,0 +1,18 @@
+ const renderRectangle = (index) => {
+    const statement = statements[index];
+    if (submitted) {
+      if (selectedIndex === index) {
+        return statement.isLie ? (
+          <PinkRectangle text={statement.text} isTrue={true} />
+        ) : (
+          <RedRectangle text={statement.text} />
+        );
+      } else if (statement.isLie) {
+        return <PinkRectangle text={statement.text} isTrue={false} />;
+      }
+      return <LieRectangel text={statement.text} />;
+    } else if (selectedIndex === index) {
+      return <WhiteRectangle text={statement.text} />;
+    }
+    return <LieRectangel text={statement.text} />;
+  };

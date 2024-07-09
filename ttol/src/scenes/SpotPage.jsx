@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactCardFlip from 'react-card-flip';
 import LieRectangel from '../components/LieRectangel';
 import WhiteRectangle from '../components/WhiteRectangle';
 import PinkRectangle from '../components/PinkReactangle';
@@ -55,23 +56,44 @@ const SpotPage = () => {
 
   const renderRectangle = (index) => {
     const statement = statements[index];
-    if (submitted) {
-      if (selectedIndex === index) {
-        return statement.isLie ? (
-          <PinkRectangle text={statement.text} isTrue={true} />
-        ) : (
-          <RedRectangle text={statement.text} />
-        );
-      } else if (statement.isLie) {
-        return <PinkRectangle text={statement.text} isTrue={false} />;
-      }
-      return <LieRectangel text={statement.text} />;
-    } else if (selectedIndex === index) {
-      return <WhiteRectangle text={statement.text} />;
-    }
-    return <LieRectangel text={statement.text} />;
-  };
 
+    return (
+      <ReactCardFlip
+        isFlipped={selectedIndex === index && submitted}
+        flipDirection="vertical"
+        key={index}
+      >
+        {/* Front of the card */}
+        <div className="card" onClick={() => handleSelect(index)}>
+          {submitted ? (
+            statement.isLie ? (
+              <PinkRectangle text={statement.text} isTrue={true} />
+            ) : (
+              <RedRectangle text={statement.text} />
+            )
+          ) : (
+            <WhiteRectangle text={statement.text} />
+          )}
+        </div>
+
+        {/* Back of the card */}
+        <div className="card" onClick={() => handleSelect(index)}>
+          {submitted ? (
+            statement.isLie ? (
+              <PinkRectangle text={statement.text} isTrue={false} />
+            ) : (
+              <LieRectangel text={statement.text} /> // Corrected component name
+            )
+          ) : (
+            <div>
+              This is the back of the card.
+              <button onClick={() => handleSelect(index)}>Click to flip</button>
+            </div>
+          )}
+        </div>
+      </ReactCardFlip>
+    );
+  };
   return (
     <div className='SpotPage'>
       {showConfetti && <Confetti />}
@@ -88,14 +110,14 @@ const SpotPage = () => {
         </p>
       )}
       <div className="LieRectangles">
-        <div onClick={() => handleSelect(0)}>
+        <div onClick={() => handleSelect(0)} className="card-container">
           {renderRectangle(0)}
         </div>
         <div className="LieRectangle2">
-          <div onClick={() => handleSelect(1)}>
+          <div onClick={() => handleSelect(1)} className="card-container">
             {renderRectangle(1)}
           </div>
-          <div className='i' onClick={() => handleSelect(2)}>
+          <div className='i' onClick={() => handleSelect(2)} >
             {renderRectangle(2)}
           </div>
         </div>
@@ -110,9 +132,11 @@ const SpotPage = () => {
           </div>
         </div>
       )}
-      { !submitted && <button className='SpotPage_Submit' onClick={handleSubmit}>
-        <span style={{ opacity: selectedIndex === null ? 0.3 : 1 }}>Submit</span>
-      </button>}
+      {!submitted && (
+        <button className='SpotPage_Submit' onClick={handleSubmit} style={{ opacity: selectedIndex === null ? 0.3 : 1 }}>
+          Submit
+        </button>
+      )}
     </div>
   );
 };

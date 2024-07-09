@@ -15,7 +15,7 @@ const useDynamicMarginBottom = (text) => {
 
       const lines = Math.ceil(ref.current.scrollHeight / lineHeight);
       const textLength = text.length;
-      const calculatedMargin = Math.max(5, 30 - (lines * 2) - (textLength * 0.1));
+      const calculatedMargin = Math.max(5, 40 - (lines * 2) - (textLength * 0.1));
       console.log(calculatedMargin);
       setMarginBottom(calculatedMargin);
     }

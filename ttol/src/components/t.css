@@ -1,8 +1,13 @@
 .w_p{
-    width: 139px;
+    width: 135px;
     position: relative;
+  
     top: 144px;
    text-align: center;
-   /* margin-bottom: 3px; */
-   font-size: 13px;
+margin-left: 4px;
+   font-size: 15px;
+   font-feature-settings: 'clig' off, 'liga' off;
+font-family: Gilroy;
+font-weight: 800;
+
 }

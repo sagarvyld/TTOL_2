@@ -5,7 +5,7 @@ const WhiteRectangle = ({text="pokemon is the greatest show i ever watch. My fav
    const { ref, marginBottom } = useDynamicMarginBottom(text, "w_p");
   return (
     <div>
-      <p className="w_p" ref={ref} style={{ color: 'white', marginBottom: `${marginBottom}px` }}>{text}</p>
+      <p className="w_p" ref={ref} style={{ color: 'black', marginBottom: `${marginBottom}px`,  }}>{text}</p>
       <svg
         width="147"
         height="172"

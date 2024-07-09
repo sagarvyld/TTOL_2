@@ -4,24 +4,32 @@ import WhiteRectangle from '../components/WhiteRectangle';
 import PinkRectangle from '../components/PinkReactangle';
 import RedRectangle from '../components/RedRectangle';
 import './SpotPage.css';
-import  profile from '../assests/Profile.png';
+import profile from '../assests/Profile.png';
 
 const statements = [
   { text: "I have a Black belt in Karate", isLie: false },
-  { text: "I have ghosted a celebrity in DMs", isLie: false },
-  { text: "I have accidentally texted a meme to my boss", isLie: true }
+  { text: "I have ghosted a celebrity in DMs", isLie: true },
+  { text: "I have accidentally texted a meme to my boss", isLie: false }
 ];
 
 const SpotPage = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [submitted, setSubmitted] = useState(false);
+  const [resultText, setResultText] = useState("Can you spot the lie? 😜");
 
   const handleSelect = (index) => {
     setSelectedIndex(index);
   };
 
   const handleSubmit = () => {
+    if (selectedIndex === null) return;
+
     setSubmitted(true);
+    if (statements[selectedIndex].isLie) {
+      setResultText("Woohoo 😎");
+    } else {
+      setResultText("Oh no! 😭");
+    }
   };
 
   const renderRectangle = (index) => {
@@ -51,7 +59,7 @@ const SpotPage = () => {
         </svg>
         <button className='spot_upper_Skip'>Skip</button>
       </div>
-      <p className='spot_heading'>Can you spot the lie? 😜</p>
+      <p className='spot_heading'>{resultText}</p>
       <div className="LieRectangles">
         <div onClick={() => handleSelect(0)}>
           {renderRectangle(0)}
@@ -73,7 +81,11 @@ const SpotPage = () => {
           Wow !! that’s a tough one and I have managed something let’s see if you get it
         </div>
       </div>
-      <button className='SpotPage_Submit' onClick={handleSubmit}>
+      <button
+        className='SpotPage_Submit'
+        onClick={handleSubmit}
+        style={{ opacity: selectedIndex === null ? 0.3 : 1 }}
+      >
         Submit
       </button>
     </div>

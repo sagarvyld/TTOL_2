@@ -91,10 +91,10 @@ const SpotPage = () => {
           {renderRectangle(0)}
         </div>
         <div className="LieRectangle2">
-          <div onClick={() => handleSelect(1)}>
+          <div  onClick={() => handleSelect(1)}>
             {renderRectangle(1)}
           </div>
-          <div onClick={() => handleSelect(2)}>
+          <div className='i' onClick={() => handleSelect(2)}>
             {renderRectangle(2)}
           </div>
         </div>

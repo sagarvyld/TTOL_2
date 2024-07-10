@@ -8,13 +8,26 @@ import './SpotPage.css';
 import profile from '../assests/Profile.png';
 import Confetti from 'react-confetti';
 
-const statements = [
+const initialStatements = [
   { text: "I have a Black belt in Karate", isLie: false },
   { text: "I have ghosted a celebrity in DMs", isLie: false },
   { text: "I have accidentally texted a meme to my boss", isLie: true }
 ];
-
+const shuffleArray = (array) => {
+    let shuffledArray = array.slice();
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+  };
+  
 const SpotPage = () => {
+const [statements,setStatements]=useState([
+    { text: "I have a Black belt in Karate", isLie: false },
+    { text: "I have ghosted a celebrity in DMs", isLie: false },
+    { text: "I have accidentally texted a meme to my boss", isLie: true }
+  ]);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [resultText, setResultText] = useState("Can you spot the lie? 😜");
@@ -23,8 +36,12 @@ const SpotPage = () => {
   const [win, setWin] = useState(false);
   const [delayFlip, setDelayFlip] = useState(false);
 
+  useEffect(() => {
+    setStatements(shuffleArray(initialStatements));
+  }, []);
+
   const handleSelect = (index) => {
-    if (submitted) return; // Prevent selection if already submitted
+    if (submitted) return; 
     setSelectedIndex(index);
   };
 

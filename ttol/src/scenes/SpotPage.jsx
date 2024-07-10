@@ -150,7 +150,7 @@ const SpotPage = () => {
           </div>
         </div>
       </div>
-      {selectedIndex === null && (
+      {!submitted && (
         <div className="Lie_Information">
           <div className="User_picture">
             <img src={profile} alt="User" />

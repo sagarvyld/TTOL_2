@@ -67,11 +67,20 @@ const SpotPage = () => {
         <div className="card" onClick={() => handleSelect(index)}>
           {submitted ? (
             statement.isLie ? (
-              <PinkRectangle text={statement.text} isTrue={false} />
+                selectedIndex===index?(
+              <WhiteRectangle text={statement.text} isTrue={false} />
+                ):(
+                    <PinkRectangle text={statement.text}  isTrue={false}  />
+                )
             ) : (
-              <LieRectangel text={statement.text} />
+                selectedIndex===index?(
+              <WhiteRectangle text={statement.text} isTrue={true} />
+                ):(
+                    <LieRectangel text={statement.text}/>
+                )
             )
           ) : (selectedIndex!==index?(
+                
             <LieRectangel text={statement.text} />
           ):(<WhiteRectangle text={statement.text} />)
           )}
@@ -86,10 +95,7 @@ const SpotPage = () => {
               <RedRectangle text={statement.text} /> // Corrected component name
             )
           ) : (
-            <div>
-              This is the back of the card.
-              <button onClick={() => handleSelect(index)}>Click to flip</button>
-            </div>
+           <WhiteRectangle text={statement.text}/>
           )}
         </div>
       </ReactCardFlip>

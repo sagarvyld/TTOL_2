@@ -178,8 +178,8 @@ const [statements,setStatements]=useState([
         </div>
       )}
       {!submitted && (
-        <button className='SpotPage_Submit' onClick={handleSubmit} style={{ opacity: selectedIndex === null ? 0.3 : 1 }}>
-          Submit
+        <button className='SpotPage_Submit' onClick={handleSubmit}>
+          <span style={{ opacity: selectedIndex === null ? 0.3 : 1 }}>Submit</span>
         </button>
       )}
     </div>

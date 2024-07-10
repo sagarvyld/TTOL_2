@@ -5,7 +5,7 @@ const PinkRectangle = ({ text = "pokemon", isTrue = true }) => {
     const { ref, marginBottom } = useDynamicMarginBottom(text, "w_p");
     return (
     <div className='outer-div-rect'>
-        <p className="w_p" ref={ref} style={{ color: 'white', marginBottom: `${marginBottom}px` }}>{text}</p>
+        <p className="w_p" ref={ref} style={{ color: 'white', marginTop: `${marginBottom}px` }}>{text}</p>
       <svg
         width="147"
         height="172"

@@ -5,7 +5,7 @@ const RedRectangel = ({ text = "pokemon is the greatest show i ever watch. My fa
     const { ref, marginBottom } = useDynamicMarginBottom(text, "w_p");
     return (
     <div className="outer-div-rect Lie_rectangel">
-         <p className="w_p" ref={ref} style={{ color: 'white', marginBottom: `${marginBottom}px` }}>{text}</p>
+         <p className="w_p" ref={ref} style={{ color: 'white', marginTop: `${marginBottom}px` }}>{text}</p>
       <svg
         width="147"
         height="172"

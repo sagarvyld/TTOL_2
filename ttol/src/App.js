@@ -1,4 +1,5 @@
 import "./App.css";
+import './assests/fonts/styles/fonts.css';
 import SpotPage from "./scenes/SpotPage";
 
 function App() {

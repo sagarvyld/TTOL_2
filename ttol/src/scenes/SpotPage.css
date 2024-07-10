@@ -49,7 +49,7 @@
 .User_text {
   color: var(--Neutral-Light, #fff);
   font-feature-settings: "clig" off, "liga" off;
-  font-family: Gilroy;
+  font-family: "Gilroy";
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
@@ -63,7 +63,7 @@
   gap: 0.625rem;
   color: var(--Light-Light--70, #bcc9da);
   text-align: center;
-  font-family: Gilroy;
+  font-family: "Gilroy";
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 700;
@@ -103,7 +103,7 @@
   color: var(--Accent-Accent--04-Accent-04, #36ffa1);
   text-align: center;
   font-feature-settings: "clig" off, "liga" off;
-  font-family: Gilroy;
+  font-family: "Gilroy";
   font-size: 18px;
   font-style: normal;
   font-weight: 600;

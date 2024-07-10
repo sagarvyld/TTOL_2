@@ -5,7 +5,7 @@ import WhiteRectangle from '../components/WhiteRectangle';
 import PinkReactangle from '../components/PinkReactangle';
 import RedRectangle from '../components/RedRectangle';
 import './SpotPage.css';
-import profile from '../assests/Profile.png';
+import profile from '../assests/img/Profile.png';
 import Confetti from 'react-confetti';
 
 const initialStatements = [

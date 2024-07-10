@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import LieRectangel from '../components/LieRectangel';
 import WhiteRectangle from '../components/WhiteRectangle';
-import PinkRectangle from '../components/PinkReactangle';
+import PinkReactangle from '../components/PinkReactangle';
 import RedRectangle from '../components/RedRectangle';
 import './SpotPage.css';
 import profile from '../assests/Profile.png';
@@ -21,6 +21,7 @@ const SpotPage = () => {
   const [resultTextSm, setResultTextSm] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
   const [win, setWin] = useState(false);
+  const [delayFlip, setDelayFlip] = useState(false);
 
   const handleSelect = (index) => {
     if (submitted) return; // Prevent selection if already submitted
@@ -39,6 +40,12 @@ const SpotPage = () => {
       setResultText("Oh no! 😭");
       setResultTextSm("You chose the wrong lie");
     }
+
+    if (!statements[selectedIndex].isLie) {
+      setTimeout(() => {
+        setDelayFlip(true);
+      }, 1000); 
+    }
   };
 
   const confettiSubmit = () => {
@@ -56,51 +63,65 @@ const SpotPage = () => {
 
   const renderRectangle = (index) => {
     const statement = statements[index];
+    const isSelected = selectedIndex === index;
+    const isCorrectLie = statement.isLie;
+    const shouldFlip = submitted && (isSelected || (isCorrectLie && delayFlip));
 
     return (
       <ReactCardFlip
-        isFlipped={selectedIndex === index && submitted}
-        flipDirection="vertical"
+        isFlipped={shouldFlip}
+        flipDirection="horizontal"
         key={index}
       >
         {/* Front of the card */}
         <div className="card" onClick={() => handleSelect(index)}>
           {submitted ? (
             statement.isLie ? (
-                selectedIndex===index?(
-              <WhiteRectangle text={statement.text} isTrue={false} />
-                ):(
-                    <PinkRectangle text={statement.text}  isTrue={false}  />
-                )
+              selectedIndex === index ? (
+                <WhiteRectangle text={statement.text} isTrue={true} />
+              ) : (
+                <LieRectangel text={statement.text} isTrue={false} />
+              )
             ) : (
-                selectedIndex===index?(
-              <WhiteRectangle text={statement.text} isTrue={true} />
-                ):(
-                    <LieRectangel text={statement.text}/>
-                )
+              selectedIndex === index ? (
+                <WhiteRectangle text={statement.text} />
+              ) : (
+                <LieRectangel text={statement.text} />
+              )
             )
-          ) : (selectedIndex!==index?(
-                
-            <LieRectangel text={statement.text} />
-          ):(<WhiteRectangle text={statement.text} />)
+          ) : (
+            selectedIndex !== index ? (
+              <LieRectangel text={statement.text} />
+            ) : (
+              <WhiteRectangle text={statement.text} />
+            )
           )}
         </div>
 
         {/* Back of the card */}
-        <div className="card" onClick={() => handleSelect(index)}>
+        <div className="card">
           {submitted ? (
             statement.isLie ? (
-              <PinkRectangle text={statement.text} isTrue={true} />
+              selectedIndex === index ? (
+                <PinkReactangle text={statement.text} isTrue={true} />
+              ) : (
+                <PinkReactangle text={statement.text} isTrue={false} /> // Correct lie with delay
+              )
             ) : (
-              <RedRectangle text={statement.text} /> // Corrected component name
+              selectedIndex === index ? (
+                <RedRectangle text={statement.text} />
+              ) : (
+                <LieRectangel text={statement.text} />
+              )
             )
           ) : (
-           <WhiteRectangle text={statement.text}/>
+            <WhiteRectangle text={statement.text} />
           )}
         </div>
       </ReactCardFlip>
     );
   };
+
   return (
     <div className='SpotPage'>
       {showConfetti && <Confetti />}
@@ -129,7 +150,7 @@ const SpotPage = () => {
           </div>
         </div>
       </div>
-      {!submitted  && (
+      {selectedIndex === null && (
         <div className="Lie_Information">
           <div className="User_picture">
             <img src={profile} alt="User" />

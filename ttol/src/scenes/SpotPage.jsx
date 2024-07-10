@@ -44,7 +44,7 @@ const SpotPage = () => {
     if (!statements[selectedIndex].isLie) {
       setTimeout(() => {
         setDelayFlip(true);
-      }, 1000); 
+      }, 500); 
     }
   };
 

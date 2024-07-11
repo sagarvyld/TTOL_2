@@ -19,7 +19,7 @@
   border-radius: var(--x-Large, 62.4375rem);
   background: var(--Dark-Dark--70, #384353);
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   position: relative;
   top: 3vh;

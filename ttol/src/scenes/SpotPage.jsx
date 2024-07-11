@@ -19,6 +19,7 @@ const shuffleArray = (array) => {
 
 const SpotPage = () => {
   const [statements, setStatements] = useState();
+  const [msg, setMsg] = useState('');
   useEffect(() => {
     const url = "https://vyld-cb-dev-api.vyld.io/api/v1/activity-games/game"; 
     const params = new URLSearchParams({
@@ -38,6 +39,7 @@ const SpotPage = () => {
     })
     .then((data) => {
       setStatements(shuffleArray(data.data.statements)); 
+      setMsg(data.data.message);
     })
     .catch((error) => {
       console.error("Error:", error); 
@@ -194,8 +196,7 @@ const SpotPage = () => {
             <img src={profile} alt="User" />
           </div>
           <div className="User_text">
-            Wow !! that’s a tough one and I have managed something let’s see if
-            you get it
+           {msg}
           </div>
         </div>
       )}

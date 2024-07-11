@@ -21,11 +21,12 @@ const SpotPage = () => {
   const [statements, setStatements] = useState();
   const [msg, setMsg] = useState('');
   useEffect(() => {
+    const urlParams= new URLSearchParams(window.location.search);
     const url = "https://vyld-cb-dev-api.vyld.io/api/v1/activity-games/game"; 
     const params = new URLSearchParams({
-      activityId: "668fa009dc586ee7e2ec5207", 
+      // activityId: "668fa009dc586ee7e2ec5207", 
+      activityId: urlParams.get('activityId'), 
     });
-  
     fetch(`${url}?${params}`, {
       method: "GET",
       headers: {    

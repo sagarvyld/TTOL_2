@@ -8,11 +8,6 @@ import "./SpotPage.css";
 import profile from "../assests/img/Profile.png";
 import Confetti from "react-confetti";
 
-const initialStatements = [
-  { text: "I have a Black belt in Karate", isLie: false },
-  { text: "I have ghosted a celebrity in DMs", isLie: false },
-  { text: "I have accidentally texted a meme to my boss", isLie: true },
-];
 const shuffleArray = (array) => {
   let shuffledArray = array.slice();
   for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -23,11 +18,7 @@ const shuffleArray = (array) => {
 };
 
 const SpotPage = () => {
-  const [statements, setStatements] = useState([
-    { text: "I have a Black belt in Karate", isLie: false },
-    { text: "I have ghosted a celebrity in DMs", isLie: false },
-    { text: "I have accidentally texted a meme to my boss", isLie: true },
-  ]);
+  const [statements, setStatements] = useState();
   useEffect(() => {
     const url = "https://vyld-cb-dev-api.vyld.io/api/v1/activity-games/game"; 
     const params = new URLSearchParams({
@@ -36,9 +27,7 @@ const SpotPage = () => {
   
     fetch(`${url}?${params}`, {
       method: "GET",
-      headers: {
-       
-        
+      headers: {    
       },
     })
     .then((response) => {
@@ -48,7 +37,7 @@ const SpotPage = () => {
       return response.json(); 
     })
     .then((data) => {
-      setStatements( data.data.statements); 
+      setStatements(shuffleArray(data.data.statements)); 
     })
     .catch((error) => {
       console.error("Error:", error); 
@@ -104,12 +93,14 @@ const SpotPage = () => {
   }, [win]);
 
   const renderRectangle = (index) => {
+    if (statements === undefined) return null;
     const statement = statements[index];
     const isSelected = selectedIndex === index;
     const isCorrectLie = statement.isLie;
     const shouldFlip = submitted && (isSelected || (isCorrectLie && delayFlip));
 
     return (
+      
       <ReactCardFlip
         isFlipped={shouldFlip}
         flipDirection="horizontal"

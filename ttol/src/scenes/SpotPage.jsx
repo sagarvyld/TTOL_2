@@ -191,7 +191,7 @@ const SpotPage = () => {
           </div>
         </div>
       </div>
-      {!submitted && (
+      {(msg && !submitted) && (
         <div className="Lie_Information">
           <div className="User_picture">
             <img src={profile} alt="User" />

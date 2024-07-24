@@ -7,6 +7,7 @@ import RedRectangle from "../components/RedRectangle";
 import "./SpotPage.css";
 import profile from "../assests/img/Profile.png";
 import Confetti from "react-confetti";
+import SkipBox from "../components/SkipBox";
 
 const shuffleArray = (array) => {
   let shuffledArray = array.slice();
@@ -20,6 +21,7 @@ const shuffleArray = (array) => {
 const SpotPage = () => {
   const [statements, setStatements] = useState();
   const [msg, setMsg] = useState('');
+  const [skip,setskip]=useState(false);
   useEffect(() => {
     const urlParams= new URLSearchParams(window.location.search);
     const url = "https://vyld-cb-dev-api.vyld.io/api/v1/activity-games/game"; 
@@ -56,8 +58,8 @@ const SpotPage = () => {
   const [win, setWin] = useState(false);
   const [delayFlip, setDelayFlip] = useState(false);
 
-
   const handleSelect = (index) => {
+ 
     if (submitted) return;
     setSelectedIndex(index);
   };
@@ -155,7 +157,7 @@ const SpotPage = () => {
   return (
     <div className="SpotPage">
       {showConfetti && <Confetti />}
-      <div className="spot_page_upper">
+     { <div className={`spot_page_upper ${submitted?'opacity_truth':''}`} >
         <svg
           width="24"
           height="24"
@@ -170,8 +172,9 @@ const SpotPage = () => {
             fill="white"
           />
         </svg>
-        <button className="spot_upper_Skip">Skip</button>
-      </div>
+        <button className="spot_upper_Skip" onClick={()=>setskip(true)}>Skip</button>
+      </div> }
+      {skip && <SkipBox skip={skip} setskip={setskip}/>}
       <p className="spot_heading">{resultText}</p>
       {submitted && (
         <p className={`spot_heading-sm ${!win ? "spot_heading-sm-wrong" : ""}`}>
